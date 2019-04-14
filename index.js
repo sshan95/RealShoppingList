@@ -7,15 +7,16 @@ $(function() {
       addListItem();
   });
 
-  //This is to check the item
-  $(".shopping-item-toggle").on("click", function() {
-   $(this).closest("li").toggleClass(".shopping-item shopping-item__checked");
-});
-
   //This is to delete the item
-   $(".shopping-item-delete").on("click", function() {
-    $(this).closest("li").remove();
-})
+  $('.shopping-list').on('click', '.shopping-item-delete', function(event) {
+    $(this).closest('li').remove();
+  });
+
+  //This is to check the item
+  $('.shopping-list').on('click', '.shopping-item-toggle', function(event) {
+    $(this).closest('li').find('.shopping-item').toggleClass('shopping-item__checked');
+  });
+
   
 
   function addListItem() {
